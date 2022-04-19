@@ -409,6 +409,7 @@ p {
   grid-gap: 20px;
   align-items: stretch;
   padding: 0 23% 0 23%;
+  height: remaining-space;
 }
 
 @media screen and (max-width: 950px) {
@@ -462,7 +463,6 @@ p {
   font-weight: 500;
   color: var(--text-muted);
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
 }
 
@@ -549,9 +549,21 @@ p {
   background-color: var(--bg2);
 }
 
+/* background-image: radial-gradient(ellipse farthest-corner at -173% 190%, #0c0d10 81%, #14151b 81%); */
 .page-section.content-header {
-  background: url('img/background.svg') center/cover no-repeat;
+  background: url('img/background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flow-root;
 }
+
+@media screen and (max-width: 950px) {
+  .page-section.content-header {
+    background: var(--bg3-alt) !important;
+  }
+}
+
 
 .card-container .card:hover {
   transform: translateY(-5px);
@@ -700,4 +712,90 @@ p {
   opacity: 0;
   animation-name: fadeInUp;
   -webkit-animation-name: fadeInUp;
+}
+
+
+/* LOADING */
+
+
+.loadcard{
+  width: 100%;
+  background: #14151b;
+}
+.loadcard .loadheader{
+  display: flex;
+  align-items: center;
+}
+.loadheader .loadimg{
+  height: 194px;
+  width: 100%;
+  background: #181b2c;
+  position: relative;
+  overflow: hidden;
+}
+
+.loadcard .loaddescription{
+  padding: 20px 20px 0 20px;
+  margin: 15.5px 0;
+}
+.loaddescription .loadline{
+  background: #181b2c;
+  border-radius: 10px;
+  height: 13px;
+  margin: 5px 0;
+  overflow: hidden;
+  position: relative;
+}
+.loaddescription .loadline-1{
+  width: calc(100% - 15%);
+}
+.loaddescription .loadline-3{
+  width: calc(100% - 40%);
+  margin-bottom: 36.66px;
+}
+.loadcard .loadbtns{
+  display: flex;
+  padding: 5px 20px 20px 20px;
+}
+.loadcard .loadbtns .loadbtn{
+  height: 35px;
+  width: 82px;
+  background: #181b2c;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+.loadbtns .loadbtn-1{
+  margin-right: 8px;
+}
+
+.loadheader .loadimg::before,
+.loaddescription .loadline::before,
+.loadbtns .loadbtn::before{
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to right, #181b2c 0%, #1c2034 20%, #181b2c 40%, #181b2c 100%);
+  background-repeat: no-repeat;
+  background-size: 450px 400px;
+  animation: shimmer 1s linear infinite;
+}
+.loadheader .loadimg::before{
+  background-size: 650px 600px;
+}
+.loadbtns .loadbtn-2::before{
+  animation-delay: 0.2s;
+}
+@keyframes shimmer {
+  0%{
+    background-position: -450px 0;
+  }
+  100%{
+    background-position: 450px 0;
+  }
+}
+.card-container .loadcard:hover {
+  transform: none;
+  cursor: auto;
 }
