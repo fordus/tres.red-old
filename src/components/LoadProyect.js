@@ -1,17 +1,17 @@
 export default function LoadProyect() {
 
     return (
-        <div class="loadcard card">
-            <div class="loadheader">
-                <div class="loadimg"></div>
+        <div className="loadcard card">
+            <div className="loadheader">
+                <div className="loadimg"></div>
             </div>
-            <div class="loaddescription">
-                <div class="loadline loadline-1"></div>
-                <div class="loadline loadline-2"></div>
-                <div class="loadline loadline-3"></div>
+            <div className="loaddescription">
+                <div className="loadline loadline-1"></div>
+                <div className="loadline loadline-2"></div>
+                <div className="loadline loadline-3"></div>
             </div>
-            <div class="loadbtns">
-                <div class="loadbtn loadbtn-1"></div>
+            <div className="loadbtns">
+                <div className="loadbtn loadbtn-1"></div>
             </div>
         </div>
     )

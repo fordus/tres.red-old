@@ -601,6 +601,8 @@ p {
 @media screen and (max-width: 950px) {
   .page-section .page-section-inner {
     padding: 0 48px;
+    flex-direction: column;
+
   }
 }
 
@@ -798,4 +800,8 @@ p {
 .card-container .loadcard:hover {
   transform: none;
   cursor: auto;
+}
+
+.card-image {
+  min-height: 208px;
 }
