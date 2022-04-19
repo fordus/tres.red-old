@@ -1,5 +1,5 @@
 export default function getProjects () {
-    const URL = `https://gitlab.com/surdle/json-files/-/raw/main/projects.JSON`
+    const URL = `https://raw.githubusercontent.com/fordus/JSON/main/projects.JSON`
   
     return fetch(URL)
       .then(response => response.json())
