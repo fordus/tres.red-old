@@ -409,7 +409,6 @@ p {
   grid-gap: 20px;
   align-items: stretch;
   padding: 0 23% 0 23%;
-  height: remaining-space;
 }
 
 @media screen and (max-width: 950px) {
